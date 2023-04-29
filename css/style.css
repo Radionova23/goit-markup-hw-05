@@ -184,6 +184,9 @@ span {
 .site-nav .active {
     color: var(--color-site-nav-hover);
 }
+.site-nav .active-portfolio {
+    color: var(--color-site-nav-hover);
+}
 
 
 .current::after {
@@ -610,7 +613,17 @@ span {
 .icon-svg {
     fill: currentColor;
 }
+.customers-link {
+    transition-property: border-radius, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.customers-link:hover,
+.customers-link:focus {
+    border: 1px solid;
+    color: var(--background-color-link-hover);
+}
 
 
 /*FOOTERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR*/
@@ -736,7 +749,6 @@ span.span-footer {
     opacity: 1;
     height: 584px;
     width: 408px;
-    padding: 15px;
     background-color: #FFFFFF;
     transition: opacity 400ms, ease-in 200ms, transform 400ms;
 
@@ -820,11 +832,11 @@ span.span-footer {
     left: 0;
     
     transform: translateY(100%); 
-    transition-duration: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
     height: 300px;
     width: 360px;
     background-color: #4D5AE5;
-    cursor: pointer;
+    
     }
 
 .overlay-label {
