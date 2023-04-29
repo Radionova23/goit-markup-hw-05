@@ -30,9 +30,8 @@
 --fill: #f4f4fd;
 --color-customers-link: #8e8f99;
 --color-social-text: #FFFFFF;
---background-color-social-footer-link: #4d5ae5;
+--background-color-link-hover: #404BBF;
 --fill-footer-icon: #f4f4fd;
---border-color-customers-link-hover: #404bbf;
 --color-customers-link-hover: #404bbf;
 
 
@@ -123,8 +122,6 @@ background-color: var(--background-page-portfolio);
 
 
 
-
-
 /*site nav*/
 
 
@@ -151,20 +148,21 @@ span {
 
 
 
+
+.site-nav .link {
+    transition-property: color; 
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
+
 .site-nav .link:hover,
 .site-nav .link:focus {
-    color: var(--color-site-nav-hover);
-} 
+   
+    transition: color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.item .link {
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0. 2,1);
-}
-.item .link:hover,
-.item .link:focus {
-    color: var(--color-site-nav-hover);
-}
 .site-nav .link {
     position: relative;
     display: block;
@@ -177,6 +175,14 @@ span {
     color: var(--color-site-nav-normal);
     font-weight: 500;
     letter-spacing: 0.02em;
+    
+}
+.site-nav .link:hover,
+.site-nav .link:focus {
+    color: var(--color-site-nav-hover);
+}
+.site-nav .active {
+    color: var(--color-site-nav-hover);
 }
 
 
@@ -195,8 +201,20 @@ span {
 .current::after:hover {
    background-color:#404BBF;
 }
+
 /*adressssssssssssssssssssssssssssssssssssssssssssssssssssss*/
 /*addres*/ 
+.address-item.link {
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.address-item.link:hover,
+.address-item.link:focus {
+    color: var(--color-site-nav-hover);
+    transition: color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+}
 .address {
     margin: 0;
     padding: 0;
@@ -303,13 +321,13 @@ span {
 
 .first-btn:hover,
 .first-btn:focus {
-    background-color: var(--background-color-first-btn-hover); 
+    background-color: var(--background-color-first-btn-hover);
+    transition: background-color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .first-btn {
-    transition-property: color, background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0,2, 1);
+    transition: background-color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .first-btn:hover,
@@ -469,7 +487,7 @@ span {
 }
 .social-link:hover,
 .social-link:focus {
-    background-color: var(--background-color-social)
+    background-color: var(--background-color-link-hover);
 }
 .social-icon {
     fill:var(--fill);
@@ -485,7 +503,7 @@ span {
 .social-link:hover,
 .social-link:focus {
     border-radius: 50%;
-    background-color: #31d0aa;
+    background-color: var(--background-color-link-hover);
 }
 
 
@@ -583,12 +601,11 @@ span {
 
    
 }
-
 .customers-link:hover,
 .customers-link:focus {
-    border-color: var(--border-color-customers-link-hover);
+    border-color: #404bbf ;
     color: var(--color-customers-link-hover);
-    color: #404bbf;;
+    
 }
 .icon-svg {
     fill: currentColor;
@@ -640,7 +657,8 @@ span {
 .social-footer-link {
     width: 100%;
     height: 100%;
-    background-color: var(--background-color-social-footer-link);
+    background-color: #4D5AE5;
+    
     display: flex;
     border-radius: 50%;
     align-items: center;
@@ -650,7 +668,7 @@ span {
 
 .social-footer-link:hover,
 .social-footer-link:focus {
-    background-color: #31d0aa;
+    background-color: #404BBF;
 }
 
 .social-footer-link {
@@ -659,9 +677,10 @@ span {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-.social-footer-link {
+.social-footer-link:hover,
+.social-footer-link:focus {
     border-radius: 50%;
-    background-color: var(--background-color-social-footer-link);
+    background-color: #404BBF;
 }
 
 .footer-icon {
