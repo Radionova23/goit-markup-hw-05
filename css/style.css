@@ -33,6 +33,9 @@
 --background-color-link-hover: #404BBF;
 --fill-footer-icon: #f4f4fd;
 --color-customers-link-hover: #404bbf;
+--color-form-name: #8E8F99;
+--subscribe-button-background-color: #4D5AE5;
+--subscribe-button-hover: #404BBF;
 
 
 }
@@ -743,9 +746,7 @@ span.span-footer {
    font-family: Raleway, sans-serif;
 
 }
-.container-footer-social {
-    margin-right: 80px;
-}
+
 
 /*SUBSCRIBEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE*/
 .subscribe-button {
@@ -755,30 +756,32 @@ span.span-footer {
 .subscribe-button {
    
     display: flex;
-   
-    font-family: Roboto, sans-serif;
+    font-family: inherit;
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
     align-items: center;
+    justify-content: center;
+
     width: 165px;
     height: 40px;
     border-radius: 4px;
-    background-color: #4D5AE5;
+    background-color: var(--subscribe-button-background-color); 
     margin-left: 24px;
     border-color: #4D5AE5;
     color: #FFFFFF;
     padding-inline: 8px;
     padding-right: 24px;
     gap: 16px;
+    cursor: pointer;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
        
-    transition: background-color cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color  250 cubic-bezier(0.4, 0, 0.2, 1);
 }
 .subscribe-button:hover,
 .subscribe-button:focus {
-    background-color: #404BBF;
+    background-color: var(--subscribe-button-hover);
 }
 .subscribe-footer {
   
@@ -790,12 +793,12 @@ span.span-footer {
     padding: 0;
 }
 .subscribe-title {
-    font-family: Roboto, sans-serif;
+    
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 4%;
-    align-items: center;
+    line-height: 1.5;
+    
+    
     color: #FFFFFF;
     margin-bottom: 16px;
 }
@@ -807,24 +810,23 @@ span.span-footer {
     border-color: #FFFFFF;
     background-color: #2E2F42;
     }
-   .subscribe-icon {
-   display: flex;
-   
-   }
-
+  
+.subscribe-container {
+    margin-left: auto;
+}
 /*MODALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL*/
 
 .modal {
-    padding: 24px;
+    padding: 72px 24px 24px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(0) scale(1);
    
-    height: 584px;
+   
     width: 408px;
     background-color: #FFFFFF;
-    transition: transform background-color cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color cubic-bezier(0.4, 0, 0.2, 1);
 
 
     box-shadow:
@@ -873,12 +875,15 @@ span.span-footer {
     
     background-color: #e7e9fc;
     border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: transparent;
     justify-content: center;
     align-items: center;
     display: flex;
     padding: 0;
-
+    
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -886,8 +891,8 @@ span.span-footer {
 .modal-button:hover,
 .modal-button:focus{
     background-color: #404BBF;
-    border: 1px solid #2E2F42;
-    
+    border: 1px solid #404BBF;
+    fill: #FFFFFF;
 }
 /*FORMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 .form-header {
@@ -895,43 +900,30 @@ span.span-footer {
     margin: 0;
 }
 .form-header {
-    display: block;
     margin-bottom: 16px;
-    margin-top: 72px;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.02em;
     color: #2E2F42;
 
         
-        width: 360px;
-        height: 24px;
-        left: 540px;
-        top: 152px;
+        
+        
 }
 .form-name { 
-    display: block;
     margin-bottom: 4px;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.16;
     letter-spacing: 0.04em;
-    color: #8E8F99;
+    color: var(--color-form-name);
 
-    left: 0%;
-    right: 90.56%;
-    top: 0%;
-    bottom: 75.86%;
-
-    
 } 
-
+.modal-form-police {
+    color: #4D5AE5;
+}
 
 .div-form {
     position: relative;
@@ -1031,20 +1023,13 @@ opacity: 1;
 }
 .modal-form-agreement {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     gap: 8px;
+    margin-bottom: 24px;
     
 }
-.modal-form-label {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
-    color: #8E8F99;
-}
+
 .modal-form-message {
     display: block;
     width: 100%;
@@ -1083,6 +1068,8 @@ opacity: 1;
 .modal-btn {
     display: block;
     margin: 0 auto;
+    font-weight: 500;
+    font-family: inherit;
     
     width: 169px;
     height: 56px;
@@ -1093,6 +1080,8 @@ opacity: 1;
     border: #4D5AE5;
     outline: 2px solid transparent;
     outline-offset: -2px;
+    cursor: pointer;
+    color: #FFFFFF;
     
     transition: border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
